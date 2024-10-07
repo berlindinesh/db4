@@ -20,5 +20,5 @@ router.delete('/:id', async (req, res) => {
   const nominationDetail = await EmployeeNominationdetails.findByIdAndDelete(req.params.id);
   res.json({ message: 'Nomination detail removed', nominationDetail });
 });
-
+module.exports = router;
 

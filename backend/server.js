@@ -1,9 +1,19 @@
-require('dotenv').config();
+//require('dotenv').config();
 const express = require('express');
+const cors  = require('cors');
 const bodyParser = require('body-parser');
 const connectDB = require('./config/db');
-
+const dotenv = require('dotenv');
 const app = express();
+
+dotenv.config();
+
+app.use(cors({
+origin:  ['http://localhost:3000'],
+methods:  ['GET', 'POST', 'PUT', 'DELETE'],
+credentials: true
+
+}))
 
 // Connect to MongoDB
 connectDB();
